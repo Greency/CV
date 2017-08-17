@@ -113,7 +113,9 @@
             height: 20px;
             background-color: black;
         }
-
+        .cv .detailed-information .info-content p {
+            padding-left: 10px;
+        }
         /*校园经历 开始*/
         .cv .detailed-information .campus-content p {
             text-indent: 20px;
@@ -141,7 +143,7 @@
             left: 0;
             margin: auto;
             width: 400px;
-            height: 400px;
+            height: 390px;
             background-color: white;
             box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.3);;
         }
@@ -174,7 +176,7 @@
 <body style='background-image: url("images/background.png")'>
 <div class="cv">
     <div class="personal-information-list">
-        <img src="">
+        <img src="images/header.jpg">
         <ul id="personalInformationListButton">
             <li data-title="info" class="info-focus" style='background-image: url("images/info.png")'>关于我</li>
             <li data-title="campus" style='background-image: url("images/campus.png")'>校园经历</li>
@@ -197,10 +199,16 @@
                 <li>手机号：13594708325</li>
             </ul>
             <h4>自我评价</h4>
+            <p>热爱网站开发，热爱前端开发<br>
+               通过编码解决问题，能够获得成就感<br>
+                勤奋，有责任心<br>
+               自学前端开发，能够开发页面，能够使用ajax与后端进行数据的传输<br>
+               略微了解后端开发
+            </p>
         </div>
         <div class="campus-content" style="display: none">
             <h4>主要课程学习</h4>
-            <p>c语言，java，网页基础，jsp网页设计</p>
+            <p>c语言，java，网页基础，jsp网页设计，android应用程序设计，计算机网络，操作系统，数据结构与算法</p>
             <h4>所获证书</h4>
             <ul class="ul-common">
                 <li>CET-4</li>
@@ -210,7 +218,7 @@
             <h4>所获奖项</h4>
             <ul class="ul-common">
                 <li>ACM重庆赛区三等奖</li>
-                <li>软件设计师</li>
+                <li>三等奖学金</li>
             </ul>
         </div>
         <div class="project-content" style="display: none">
@@ -249,7 +257,7 @@
                 lastDataTitle,  //上一个被点击元素的data-title
                 data = {
                     projectSignin: ["本项目通过ajax异步获取数据，本人负责前端页面编写，后端数据获取并将数据转换成json格式传到前端，并将获取的数据动态的添加到页面中。", "https://github.com/Greency/undergraduate-sign-in-website"],
-                    projectTakeOut: ["本项目采用ajax异步获取数据，本人负责整个项目的后端编写，以及前端ajax获取数据并将数据动态添加到页面中。在项目的后端中，将获取的数据封装成一个对象，然后转成json格式传输到前端。", ""]
+                    projectTakeOut: ["本项目采用ajax异步获取数据，本人负责整个项目的后端编写，以及前端ajax获取数据并将数据动态添加到页面中。在项目的后端中，将获取的数据封装成一个对象，然后转成json格式传输到前端。", "https://github.com/Greency/clm"]
                 }
 
         //绑定事件
@@ -274,7 +282,7 @@
                     changeCss(tipsCindownContent, "display", "block")
 
                     document.querySelector("#detailContent").innerText = data[dataTitle][0]
-                    document.querySelector("#url").setAttribute("href",data[dataTitle][1])
+                    document.querySelector("#url").setAttribute("href", data[dataTitle][1])
 
                     closeButton.addEventListener("click", function (e) {
                         changeCss(tipsCindownContent, "display", "none")
