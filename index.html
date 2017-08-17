@@ -96,8 +96,11 @@
         .cv .detailed-information {
             float: left;
             background-color: white;
+            overflow: hidden;
         }
-
+        .cv .detailed-information div{
+            padding-bottom: 10px;
+        }
         /*个人信息 开始*/
         .cv .detailed-information h4 {
             position: relative;
@@ -113,9 +116,11 @@
             height: 20px;
             background-color: black;
         }
+
         .cv .detailed-information .info-content p {
             padding-left: 10px;
         }
+
         /*校园经历 开始*/
         .cv .detailed-information .campus-content p {
             text-indent: 20px;
@@ -200,10 +205,10 @@
             </ul>
             <h4>自我评价</h4>
             <p>热爱网站开发，热爱前端开发<br>
-               通过编码解决问题，能够获得成就感<br>
+                通过编码解决问题，能够获得成就感<br>
                 勤奋，有责任心<br>
-               自学前端开发，能够开发页面，能够使用ajax与后端进行数据的传输<br>
-               略微了解后端开发
+                自学前端开发，能够开发页面，能够使用ajax与后端进行数据的传输<br>
+                略微了解后端开发
             </p>
         </div>
         <div class="campus-content" style="display: none">
@@ -271,6 +276,8 @@
             changeCss(document.querySelector("." + lastDataTitle + "-content"), "display", "none")
             changeCss(document.querySelector("." + currentDataTitle + "-content"), "display", "block")
 
+            animation(document.querySelector("." + currentDataTitle + "-content"))
+
             if (currentDataTitle === "project") {
                 var projectContentUl = document.querySelector(".project-content > .ul-common")
                 projectContentUl.addEventListener("click", function (e) {
@@ -298,6 +305,28 @@
         //改变样式
         function changeCss(el, type, value) {
             el.style[type] = value
+        }
+
+        function animation(el) {
+            var i = 0,
+                    height = el.offsetHeight,
+                    flag = true
+            var timeout = setInterval(function () {
+                i += 200
+                var _height = el.offsetHeight
+                el.style.height = _height - i + "px"
+                if (flag && _height - i <= 0) {
+                    el.style.height = "0px"
+                    flag = false
+                } else if (!flag) {
+                    if (_height + i >= height) {
+                        clearInterval(timeout)
+                        el.style.height = height + "px"
+                    } else {
+                        el.style.height = _height + i + "px"
+                    }
+                }
+            }, 100)
         }
 
         //初始化
