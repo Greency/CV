@@ -307,12 +307,13 @@
             el.style[type] = value
         }
 
+        //动画
         function animation(el) {
-            var i = 0,
+            var i = 200,
                     height = el.offsetHeight,
                     flag = true
             var timeout = setInterval(function () {
-                i += 200
+                i += 10
                 var _height = el.offsetHeight
                 el.style.height = _height - i + "px"
                 if (flag && _height - i <= 0) {
