@@ -147,8 +147,8 @@
             bottom: 0;
             left: 0;
             margin: auto;
-            width: 400px;
-            height: 390px;
+            width: 510px;
+            height: 710px;
             background-color: white;
             box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.3);;
         }
@@ -166,7 +166,7 @@
             width: 70px;
             height: 40px;
             margin-top: 20px;
-            margin-left: 320px;
+            margin-left: 390px;
             background-color: black;
             color: white;
             border-width: 0px;
@@ -261,8 +261,10 @@
                 lastEl,  //存取上一个被点击的元素
                 lastDataTitle,  //上一个被点击元素的data-title
                 data = {
-                    projectSignin: ["本项目通过ajax异步获取数据，本人负责前端页面编写，后端数据获取并将数据转换成json格式传到前端，并将获取的数据动态的添加到页面中。", "https://github.com/Greency/undergraduate-sign-in-website"],
-                    projectTakeOut: ["本项目采用ajax异步获取数据，本人负责整个项目的后端编写，以及前端ajax获取数据并将数据动态添加到页面中。在项目的后端中，将获取的数据封装成一个对象，然后转成json格式传输到前端。", "https://github.com/Greency/clm"]
+                    projectSignin: ["本项目具有登录注册，个人信息修改，课程显示，动态签到，签到记录分页显示（调用我写的异步分页插件）等功能。\n" +
+                    "前端通过jquery封装的ajax动态的进行数据交互，通过jquery实现了动态检测签到时间，实现是否能够签到。后端采用面向对象的方式，将进行数据库的操作封装成对象，然后通过对象调用相应的方法（执行sql语句）获取相应的数据。ajax请求的是一个api文件，所有的请求都在这个文件中进行，方便管理。", "https://github.com/Greency/undergraduate-sign-in-website"],
+                    projectTakeOut: ["本项目具有购物车功能，登录注册，选择地址，添加地址，评价订单，星级显示，评论显示，异步分页（调用由我写的jquery异步分页插件）功能。\n" +
+                    "购物车功能采用session暂时的保存信息，登录注册密码采用md5加密，整个项目数据获取由ajax完成，实现局部刷新。后端通过面向对象的方式，将进行数据库的操作封装成对象，然后通过对象调用相应的方法（执行sql语句）获取数据（数据都被封装成一个对象，比如：评论信息，封装成一个评论对象，具有属性：评论id，评论时间，评论内容，评论人等信息，通过set,get方法进行数对象信息的添加和获取），然后将此数据对象传给前端，前端获取的数据格式就是一个数组里面的值都是对象，方便数据的获取和修改。所有的ajax请求都是一个api文件，方便管理。", "https://github.com/Greency/clm"]
                 }
 
         //绑定事件
